@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prevent Default</title>
+</head>
+<body>
+    <div id="parent">
+        <a id="child" href="https://www.google.com/">Click Me</a>
+    </ul>
+
+    <script>
+        // Prevent Default
+        document.querySelector("#child").addEventListener("click" , function(event){
+            console.log("Google Clicked");
+            event.preventDefault();
+        } , true);
+
+        // Google Clicked
+    </script>
+</body>
+</html>

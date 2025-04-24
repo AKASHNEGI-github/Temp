@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <style>
+        li
+        {
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Events</h1>
+    <ul id="boxes">
+        <li><div id="red" style="height: 50px; width: 50px; background-color: red;"></div></li>
+        <li><div id="yellow" style="height: 50px; width: 50px; background-color: yellow;"></div></li>
+        <li><div id="green" style="height: 50px; width: 50px; background-color: green;"></div></li>
+        <li><div id="blue" style="height: 50px; width: 50px; background-color: blue;"></div></li>
+        <li><a id="google" href="www.google.com">google</a></li>
+    </ul>
+
+    <script>
+        // Prevent Default
+        document.getElementById("google").addEventListener("click" , function(event){
+            console.log("Google Clicked");
+            event.preventDefault();
+        } , false);
+        // Google Clicked
+    </script>
+
+    
+</body>
+</html>
+
+<!--
+<script>
+    // Event Bubbling
+    document.getElementById("boxes").addEventListener("click" , function(){
+        console.log("Inside UL");
+    } , false);
+
+    document.getElementById("red").addEventListener("click" , function(){
+        console.log("Inside Red");
+    } , false);
+
+    // Inside Red
+    // Inside UL*/
+</script>
+
+<script>
+    // Event Capturing
+    document.getElementById("boxes").addEventListener("click" , function(){
+        console.log("Inside UL");
+    } , true);
+
+    document.getElementById("yellow").addEventListener("click" , function(){
+        console.log("Inside Yellow");
+    } , true);
+
+    // Inside UL
+    // Inside Yellow
+</script>
+
+<script>
+        // Stop Propogation
+        document.getElementById("red").addEventListener("click" , function(event){
+            console.log("Inside Red");
+            event.stopPropagation();
+        } , false);
+        // Inside Red
+    </script>
+
+    <script>
+        // Prevent Default
+        document.getElementById("google").addEventListener("click" , function(event){
+            console.log("Google Clicked");
+            event.preventDefault();
+        } , false);
+        // Google Clicked
+    </script>
+-->
